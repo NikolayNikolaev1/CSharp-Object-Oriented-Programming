@@ -2,12 +2,12 @@
 {
     public class FireBender : Bender
     {
-        private double aerialIntegrity;
+        private double heatAggression;
 
-        public FireBender(string name, int power, double aerialIntegrity)
+        public FireBender(string name, int power, double heatAggression)
             : base(name, power)
         {
-            this.aerialIntegrity = aerialIntegrity;
+            this.heatAggression = heatAggression;
         }
     }
 }

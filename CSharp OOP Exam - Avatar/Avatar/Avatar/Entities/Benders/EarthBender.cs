@@ -2,12 +2,12 @@
 {
     public class EarthBender : Bender
     {
-        private double aerialIntegrity;
+        private double groundSaturation;
 
-        public EarthBender(string name, int power, double aerialIntegrity)
+        public EarthBender(string name, int power, double groundSaturation)
             : base(name, power)
         {
-            this.aerialIntegrity = aerialIntegrity;
+            this.groundSaturation = groundSaturation;
         }
     }
 }

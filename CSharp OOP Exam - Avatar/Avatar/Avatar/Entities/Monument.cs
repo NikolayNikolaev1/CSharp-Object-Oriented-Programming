@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Avatar.Entities
+﻿namespace Avatar.Entities
 {
-    class Monument
+    public abstract class Monument
     {
+        private string name;
+
+        public Monument(string name)
+        {
+            this.name = name;
+        }
     }
 }
