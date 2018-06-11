@@ -16,7 +16,11 @@
 
         public double GetTotalPower()
         {
-            return this.benders.Sum(b => b.GetPower());
+            int monumentsIncresePercentage = this.monuments.Sum(m => m.GetAffinity());
+            double totalBendersPower = this.benders.Sum(b => b.GetPower());
+            double totalPowerIncrese = totalBendersPower / 100 * monumentsIncresePercentage;
+
+            return totalBendersPower + totalPowerIncrese;
         }
     }
 }
