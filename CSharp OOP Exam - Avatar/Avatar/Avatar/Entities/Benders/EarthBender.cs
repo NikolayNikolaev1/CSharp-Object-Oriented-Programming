@@ -11,5 +11,7 @@
         }
 
         public override double GetPower() => this.groundSaturation * this.Power;
+
+        public override string ToString() => $"{base.ToString()}, Ground Saturation: {this.groundSaturation:f2}";
     }
 }
