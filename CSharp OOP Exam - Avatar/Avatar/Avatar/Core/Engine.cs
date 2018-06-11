@@ -38,6 +38,10 @@
                 case "Monument":
                     this.nationsBuilder.AssignMonument(commandParameters);
                     break;
+                case "Status":
+                    string status = this.nationsBuilder.GetStatus(commandParameters[0]);
+                    this.OutputWriter(status);
+                    break;
                 default:
                     break;
             }
@@ -46,5 +50,7 @@
         private string ReadInput() => Console.ReadLine();
 
         private List<string> ParseInput(string inputCommand) => inputCommand.Split().ToList();
+
+        private void OutputWriter(string status) => Console.WriteLine(status);
     }
 }

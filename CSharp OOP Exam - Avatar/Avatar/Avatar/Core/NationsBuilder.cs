@@ -5,6 +5,7 @@
     using Entities;
     using System;
     using System.Collections.Generic;
+    using System.Text;
 
     public class NationsBuilder
     {
@@ -35,6 +36,16 @@
 
             Monument currentMonument = this.GetMonument(monumentArgs);
             this.nations[monumentType].AddMonument(currentMonument);
+        }
+
+        public string GetStatus(string nationsType)
+        {
+            StringBuilder message = new StringBuilder();
+
+            message.AppendLine($"{nationsType} Nation")
+                .Append(this.nations[nationsType]);
+
+            return message.ToString();
         }
 
         private Bender GetBender(List<string> benderArgs)
