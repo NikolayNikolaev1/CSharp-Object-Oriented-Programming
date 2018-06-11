@@ -1,6 +1,7 @@
 ﻿namespace Avatar.Core
 {
-    using Avatar.Entities.Benders;
+    using Entities.Benders;
+    using Entities.Monuments;
     using Entities;
     using System;
     using System.Collections.Generic;
@@ -28,6 +29,14 @@
             this.nations[benderType].AddBender(currentBender);
         }
 
+        public void AssignMonument(List<string> monumentArgs)
+        {
+            string monumentType = monumentArgs[0];
+
+            Monument currentMonument = this.GetMonument(monumentArgs);
+            this.nations[monumentType].AddMonument(currentMonument);
+        }
+
         private Bender GetBender(List<string> benderArgs)
         {
             string benderType = benderArgs[0];
@@ -45,6 +54,27 @@
                     return new WaterBender(benderName, benderPower, benderAuxParam);
                 case "Earth":
                     return new EarthBender(benderName, benderPower, benderAuxParam);
+                default:
+                    throw new ArgumentException();
+            }
+        }
+
+        private Monument GetMonument(List<string> monumentArgs)
+        {
+            string monumentType = monumentArgs[0];
+            string monumentName = monumentArgs[1];
+            int monumentAffinity = int.Parse(monumentArgs[2]);
+
+            switch (monumentType)
+            {
+                case "Air":
+                    return new AirMonument(monumentName, monumentAffinity);
+                case "Fire":
+                    return new FireMonument(monumentName, monumentAffinity);
+                case "Water":
+                    return new WaterMonument(monumentName, monumentAffinity);
+                case "Earth":
+                    return new EarthMonument(monumentName, monumentAffinity);
                 default:
                     throw new ArgumentException();
             }

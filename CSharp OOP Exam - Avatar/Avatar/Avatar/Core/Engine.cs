@@ -35,6 +35,9 @@
                 case "Bender":
                     this.nationsBuilder.AssignBender(commandParameters);
                     break;
+                case "Monument":
+                    this.nationsBuilder.AssignMonument(commandParameters);
+                    break;
                 default:
                     break;
             }

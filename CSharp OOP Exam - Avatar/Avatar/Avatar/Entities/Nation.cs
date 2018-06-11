@@ -25,5 +25,7 @@
         }
 
         public void AddBender(Bender bender) => this.benders.Add(bender);
+
+        public void AddMonument(Monument monument) => this.monuments.Add(monument);
     }
 }
