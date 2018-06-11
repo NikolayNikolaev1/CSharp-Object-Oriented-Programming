@@ -10,5 +10,7 @@ namespace Avatar.Entities
             this.name = name;
             this.power = power;
         }
+
+        public abstract double GetPower();
     }
 }

@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Avatar.Entities
+﻿namespace Avatar.Entities
 {
-    class Nation
+    using System.Collections.Generic;
+
+    public class Nation
     {
+        private List<Bender> benders;
+
+        public Nation()
+        {
+            this.benders = new List<Bender>();
+        }
     }
 }

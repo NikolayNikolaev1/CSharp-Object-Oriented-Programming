@@ -9,5 +9,7 @@
         {
             this.aerialIntegrity = aerialIntegrity;
         }
+
+        public override double GetPower() => this.aerialIntegrity * 
     }
 }
