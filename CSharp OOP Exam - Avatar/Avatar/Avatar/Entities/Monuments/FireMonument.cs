@@ -11,5 +11,7 @@
         }
 
         public override int GetAffinity() => this.fireAffinity;
+
+        public override string ToString() => $"{base.ToString()}, Fire Affinity: {this.fireAffinity}";
     }
 }

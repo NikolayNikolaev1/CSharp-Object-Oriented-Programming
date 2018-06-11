@@ -11,5 +11,7 @@
         }
 
         public override int GetAffinity() => this.earthAffinity;
+
+        public override string ToString() => $"{base.ToString()}, Earth Affinity: {this.earthAffinity}";
     }
 }

@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Avatar.Entities
+﻿namespace Avatar.Entities
 {
+    using System;
+
     public abstract class Monument
     {
         private string name;
@@ -28,5 +28,14 @@ namespace Avatar.Entities
         }
 
         public abstract int GetAffinity();
+
+        public override string ToString()
+        {
+            string monumentType = this.GetType().Name;
+            int typeEnd = monumentType.IndexOf("Monument");
+            monumentType = monumentType.Insert(typeEnd, " ");
+
+            return $"{monumentType}: {this.Name}";
+        }
     }
 }
