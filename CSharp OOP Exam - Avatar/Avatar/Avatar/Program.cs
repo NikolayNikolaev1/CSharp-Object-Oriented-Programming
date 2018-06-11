@@ -1,12 +1,13 @@
-﻿using System;
-
-namespace Avatar
+﻿namespace Avatar
 {
-    class Program
+    using Core;
+
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }
