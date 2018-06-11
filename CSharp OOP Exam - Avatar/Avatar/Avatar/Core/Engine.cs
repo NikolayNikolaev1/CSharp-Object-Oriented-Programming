@@ -42,7 +42,13 @@
                     string status = this.nationsBuilder.GetStatus(commandParameters[0]);
                     this.OutputWriter(status);
                     break;
-                default:
+                case "War":
+                    this.nationsBuilder.IssueWar(commandParameters[0]);
+                    break;
+                case "Quit":
+                    string record = this.nationsBuilder.GetWarsRecord();
+                    this.OutputWriter(record);
+                    this.isRunning = false;
                     break;
             }
         }

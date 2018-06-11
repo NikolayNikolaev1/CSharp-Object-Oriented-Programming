@@ -65,6 +65,8 @@
             this.warHistoryRecord.Add($"War {this.warHistoryRecord.Count + 1} issued by {nationsType}");
         }
 
+        public string GetWarsRecord() => string.Join(Environment.NewLine, this.warHistoryRecord);
+
         private Bender GetBender(List<string> benderArgs)
         {
             string benderType = benderArgs[0];
