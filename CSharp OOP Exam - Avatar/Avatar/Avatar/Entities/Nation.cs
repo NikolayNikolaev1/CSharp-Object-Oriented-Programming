@@ -29,6 +29,12 @@
 
         public void AddMonument(Monument monument) => this.monuments.Add(monument);
 
+        public void DeclareDefeat()
+        {
+            this.benders.Clear();
+            this.monuments.Clear();
+        }
+
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();

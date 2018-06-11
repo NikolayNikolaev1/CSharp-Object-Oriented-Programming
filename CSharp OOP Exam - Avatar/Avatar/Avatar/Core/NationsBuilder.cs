@@ -6,10 +6,12 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Linq;
 
     public class NationsBuilder
     {
         private Dictionary<string, Nation> nations;
+        private List<string> warHistoryRecord;
 
         public NationsBuilder()
         {
@@ -46,6 +48,21 @@
                 .Append(this.nations[nationsType]);
 
             return message.ToString();
+        }
+
+        public void IssueWar(string nationsType)
+        {
+            double victoriousPower = this.nations.Max(kvp => kvp.Value.GetTotalPower());
+
+            foreach (var nation in this.nations.Values)
+            {
+                if (nation.GetTotalPower() != victoriousPower)
+                {
+                    nation.DeclareDefeat();
+                }
+            }
+
+            this.warHistoryRecord.Add($"War {this.warHistoryRecord.Count + 1} issued by {nationsType}");
         }
 
         private Bender GetBender(List<string> benderArgs)
