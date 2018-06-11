@@ -9,5 +9,7 @@
         {
             this.heatAggression = heatAggression;
         }
+
+        public override double GetPower() => this.heatAggression * this.Power;
     }
 }

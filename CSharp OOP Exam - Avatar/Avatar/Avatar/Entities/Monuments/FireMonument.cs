@@ -9,5 +9,7 @@
         {
             this.fireAffinity = fireAffinity;
         }
+
+        public override int GetAffinity() => this.fireAffinity;
     }
 }

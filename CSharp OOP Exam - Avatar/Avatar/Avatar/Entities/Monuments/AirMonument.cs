@@ -9,5 +9,7 @@
         {
             this.airAffinity = airAffinty;
         }
+
+        public override int GetAffinity() => this.airAffinity;
     }
 }

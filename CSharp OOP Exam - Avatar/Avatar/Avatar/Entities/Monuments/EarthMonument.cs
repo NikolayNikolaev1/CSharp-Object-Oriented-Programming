@@ -9,5 +9,7 @@
         {
             this.earthAffinity = earthAffinity;
         }
+
+        public override int GetAffinity() => this.earthAffinity;
     }
 }

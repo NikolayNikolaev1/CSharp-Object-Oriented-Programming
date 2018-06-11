@@ -9,5 +9,7 @@
         {
             this.waterAffinity = waterAffinity;
         }
+
+        public override int GetAffinity() => this.waterAffinity;
     }
 }

@@ -9,5 +9,7 @@
         {
             this.groundSaturation = groundSaturation;
         }
+
+        public override double GetPower() => this.groundSaturation * this.Power;
     }
 }

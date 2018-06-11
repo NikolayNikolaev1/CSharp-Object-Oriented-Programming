@@ -10,6 +10,6 @@
             this.aerialIntegrity = aerialIntegrity;
         }
 
-        public override double GetPower() => this.aerialIntegrity * 
+        public override double GetPower() => this.aerialIntegrity * this.Power;
     }
 }

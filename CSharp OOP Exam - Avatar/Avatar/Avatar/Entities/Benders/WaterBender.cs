@@ -9,5 +9,7 @@
         {
             this.waterClarity = waterClarity;
         }
+
+        public override double GetPower() => this.waterClarity * this.Power;
     }
 }
