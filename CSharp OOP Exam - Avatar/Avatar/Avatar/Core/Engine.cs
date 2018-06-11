@@ -30,7 +30,14 @@
             string command = commandParameters[0];
             commandParameters.Remove(command);
 
-           
+            switch (command)
+            {
+                case "Bender":
+                    this.nationsBuilder.AssignBender(commandParameters);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private string ReadInput() => Console.ReadLine();

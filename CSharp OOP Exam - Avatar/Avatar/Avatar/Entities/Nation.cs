@@ -1,5 +1,6 @@
 ﻿namespace Avatar.Entities
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -22,5 +23,7 @@
 
             return totalBendersPower + totalPowerIncrese;
         }
+
+        public void AddBender(Bender bender) => this.benders.Add(bender);
     }
 }
