@@ -37,7 +37,18 @@
 
         public void Open(int id, string type, int length, string route, int prizePool)
         {
-
+            switch (type)
+            {
+                case "Casual":
+                    this.races.Add(id, new CasualRace(length, route, prizePool));
+                    break;
+                case "Drag":
+                    this.races.Add(id, new DragRace(length, route, prizePool));
+                    break;
+                case "Drift":
+                    this.races.Add(id, new DragRace(length, route, prizePool));
+                    break;
+            }
         }
 
         public void Participate(int carId, int raceId)

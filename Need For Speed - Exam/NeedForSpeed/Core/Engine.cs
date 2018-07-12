@@ -24,11 +24,14 @@
 
         public void ExecuteCommand(string[] cmdArgs)
         {
+            int id = int.Parse(cmdArgs[1]);
+            string type = cmdArgs[2];
+
             switch (cmdArgs[0])
             {
                 case "register":
-                    int id = int.Parse(cmdArgs[1]);
-                    string type = cmdArgs[2];
+                    id = int.Parse(cmdArgs[1]);
+                    type = cmdArgs[2];
                     string brand = cmdArgs[3];
                     string model = cmdArgs[4];
                     int yearOfProduction = int.Parse(cmdArgs[5]);
@@ -39,9 +42,16 @@
                     manager.Register(id, type, brand, model, yearOfProduction, horsepower, acceleration, suspension, durability);
                     break;
                 case "check":
-                    Console.WriteLine(manager.Check(int.Parse(cmdArgs[1])));
+                    id = int.Parse(cmdArgs[1]);
+                    Console.WriteLine(manager.Check(id));
                     break;
                 case "open":
+                    id = int.Parse(cmdArgs[1]);
+                    type = cmdArgs[2];
+                    int lenght = int.Parse(cmdArgs[3]);
+                    string route = cmdArgs[4];
+                    int prizePool = int.Parse(cmdArgs[5]);
+                    manager.Open(id, type, lenght, route, prizePool);
                     break;
                 case "participate":
                     break;
