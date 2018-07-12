@@ -39,6 +39,7 @@
                     manager.Register(id, type, brand, model, yearOfProduction, horsepower, acceleration, suspension, durability);
                     break;
                 case "check":
+                    Console.WriteLine(manager.Check(int.Parse(cmdArgs[1])));
                     break;
                 case "open":
                     break;

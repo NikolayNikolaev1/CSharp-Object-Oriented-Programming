@@ -1,5 +1,7 @@
 ﻿namespace NeedForSpeed.Entities.Cars
 {
+    using System.Text;
+
     public abstract class Car
     {
         private string brand;
@@ -20,6 +22,16 @@
             this.acceleration = acceleration;
             this.suspension = suspension;
             this.durability = durability;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{brand} {model} {yearOfProduction}");
+            sb.AppendLine($"{horsepower} HP, 100 m/h in {acceleration} s");
+            sb.AppendLine($"{suspension} Suspension force, {durability} Durability");
+
+            return sb.ToString();
         }
     }
 }

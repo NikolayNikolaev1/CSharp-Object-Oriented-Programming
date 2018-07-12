@@ -33,10 +33,7 @@
             }
         }
 
-        public string Check(int id)
-        {
-            return ToString();
-        }
+        public string Check(int id) => this.cars[id].ToString();
 
         public void Open(int id, string type, int length, string route, int prizePool)
         {
