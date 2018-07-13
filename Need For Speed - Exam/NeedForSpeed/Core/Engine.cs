@@ -50,6 +50,7 @@
                     this.UnparkCommand(cmdArgs);
                     break;
                 case "tune":
+                    this.TuneCommand(cmdArgs);
                     break;
             }   
         }
@@ -107,6 +108,13 @@
         {
             int id = int.Parse(cmdArgs[1]);
             manager.Unpark(id);
+        }
+
+        private void TuneCommand(string[] cmdArgs)
+        {
+            int tuneIndex = int.Parse(cmdArgs[1]);
+            string addOn = cmdArgs[2];
+            manager.Tune(tuneIndex, addOn);
         }
     }
 }

@@ -10,6 +10,12 @@
             int acceleration, int suspension, int durability)
             : base(brand, model, yearOfProduction, horsepower, acceleration, suspension, durability) { }
 
+        public override void Tune(int tuneIndex, string addOn)
+        {
+            base.Tune(tuneIndex, addOn);
+            this.stars += tuneIndex;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(base.ToString());

@@ -16,6 +16,12 @@
             this.addOns = new List<string>();
         }
 
+        public override void Tune(int tuneIndex, string addOn)
+        {
+            base.Tune(tuneIndex, addOn);
+            this.addOns.Add(addOn);
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(base.ToString());

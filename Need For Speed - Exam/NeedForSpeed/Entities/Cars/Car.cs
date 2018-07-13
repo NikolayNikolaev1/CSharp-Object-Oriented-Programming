@@ -144,6 +144,12 @@
             }
         }
 
+        public virtual void Tune(int tuneIndex, string addOn)
+        {
+            this.horsepower += tuneIndex;
+            this.suspension += tuneIndex / 2;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

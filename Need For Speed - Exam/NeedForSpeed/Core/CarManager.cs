@@ -78,7 +78,10 @@
 
         public void Tune(int tuneIndex, string addOn)
         {
-
+            foreach (var id in garage.ParkedCars)
+            {
+                cars[id].Tune(tuneIndex, addOn);
+            }
         }
     }
 }
