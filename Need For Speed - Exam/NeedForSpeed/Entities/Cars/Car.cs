@@ -147,7 +147,7 @@
         public virtual void Tune(int tuneIndex, string addOn)
         {
             this.horsepower += tuneIndex;
-            this.suspension += tuneIndex / 2;
+            this.suspension += tuneIndex * 50 / 100;
         }
 
         public override string ToString()
