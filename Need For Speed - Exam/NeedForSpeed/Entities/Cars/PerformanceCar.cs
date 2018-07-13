@@ -11,6 +11,8 @@
             int acceleration, int suspension, int durability) 
             : base(brand, model, yearOfProduction, horsepower, acceleration, suspension, durability)
         {
+            this.HorsePower = this.HorsePower * 3 / 2;
+            this.Suspension -= this.Suspension * 25 / 100;
             this.addOns = new List<string>();
         }
 

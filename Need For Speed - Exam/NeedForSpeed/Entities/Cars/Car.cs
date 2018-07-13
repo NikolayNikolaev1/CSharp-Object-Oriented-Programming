@@ -82,7 +82,7 @@
             {
                 return this.horsepower;
             }
-            private set
+            protected set
             {
                 if (value <= 0)
                 {
@@ -116,7 +116,7 @@
             {
                 return this.suspension;
             }
-            private set
+            protected set
             {
                 if (value <= 0)
                 {

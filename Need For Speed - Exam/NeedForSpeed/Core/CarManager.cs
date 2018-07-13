@@ -53,13 +53,10 @@
 
         public void Participate(int carId, int raceId)
         {
-            this.races[raceId].Participants.Add(cars[carId]);
+            this.races[raceId].Participants.Add(carId, cars[carId]);
         }
 
-        public string Start(int id)
-        {
-            return ToString();
-        }
+        public string Start(int id) => races[id].StartRace();
 
         public void Park(int id)
         {

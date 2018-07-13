@@ -35,12 +35,13 @@
                     Console.WriteLine(this.CheckCommand(cmdArgs));
                     break;
                 case "open":
-                    this.CheckCommand(cmdArgs);
+                    this.OpenCommand(cmdArgs);
                     break;
                 case "participate":
                     this.ParticipateCommand(cmdArgs);
                     break;
                 case "start":
+                    Console.WriteLine(this.StartCommand(cmdArgs));
                     break;
                 case "park":
                     break;
@@ -86,6 +87,12 @@
             int carId = int.Parse(cmdArgs[1]);
             int raceId = int.Parse(cmdArgs[2]);
             manager.Participate(carId, raceId);
+        }
+
+        private string StartCommand(string[] cmdArgs)
+        {
+            int raceId = int.Parse(cmdArgs[1]);
+            return manager.Start(raceId);
         }
     }
 }

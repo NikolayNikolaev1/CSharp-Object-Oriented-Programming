@@ -97,22 +97,31 @@
             }
         }
 
+        public List<int> GetPrizes()
+        {
+            var result = new List<int>();
+            result.Add((this.prizePool * 50) / 100);
+            result.Add((this.prizePool * 30) / 100);
+            result.Add((this.prizePool * 20) / 100);
+
+            return result;
+        }
+
         public string StartRace()
         {
             var winners = GetWinners();
+            var prizes = GetPrizes();
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.route} - {this.length}");
-            int counter = 1;
 
-
-            foreach (var winner in winners)
+            for (int i = 0; i < winners.Count; i++)
             {
-                if (counter )
-                {
-
-                }
+                var car = winners.ElementAt(i);
+                sb.AppendLine($"{i + 1}. {car.Value.Brand} {car.Value.Model} {this.GetPerformance(car.Key)}PP - ${prizes[i]}");
             }
+
+            return sb.ToString().Trim();
         }
 
         public Dictionary<int, Car> GetWinners() => 
