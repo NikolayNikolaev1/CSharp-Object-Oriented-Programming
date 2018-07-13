@@ -53,7 +53,7 @@
 
         public void Participate(int carId, int raceId)
         {
-
+            this.races[raceId].Participants.Add(cars[carId]);
         }
 
         public string Start(int id)

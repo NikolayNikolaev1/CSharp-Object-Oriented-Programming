@@ -38,8 +38,7 @@
                     this.CheckCommand(cmdArgs);
                     break;
                 case "participate":
-                    int carId = int.Parse(cmdArgs[1]);
-                    int raceId = int.Parse(cmdArgs[2]);
+                    this.ParticipateCommand(cmdArgs);
                     break;
                 case "start":
                     break;
@@ -80,6 +79,13 @@
             string route = cmdArgs[4];
             int prizePool = int.Parse(cmdArgs[5]);
             manager.Open(id, type, lenght, route, prizePool);
+        }
+
+        private void ParticipateCommand(string[] cmdArgs)
+        {
+            int carId = int.Parse(cmdArgs[1]);
+            int raceId = int.Parse(cmdArgs[2]);
+            manager.Participate(carId, raceId);
         }
     }
 }
