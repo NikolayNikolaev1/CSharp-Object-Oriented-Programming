@@ -4,8 +4,6 @@
 
     public class DriftRace : Race
     {
-        private int susspensionPerformance;
-
         public DriftRace(int length, string route, int prizePool)
             : base(length, route, prizePool) { }
 

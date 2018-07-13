@@ -97,16 +97,6 @@
             }
         }
 
-        public List<int> GetPrizes()
-        {
-            var result = new List<int>();
-            result.Add((this.prizePool * 50) / 100);
-            result.Add((this.prizePool * 30) / 100);
-            result.Add((this.prizePool * 20) / 100);
-
-            return result;
-        }
-
         public string StartRace()
         {
             var winners = GetWinners();
@@ -124,12 +114,22 @@
             return sb.ToString().Trim();
         }
 
-        public Dictionary<int, Car> GetWinners() => 
+        public abstract int GetPerformance(int id);
+
+        private List<int> GetPrizes()
+        {
+            var result = new List<int>();
+            result.Add((this.prizePool * 50) / 100);
+            result.Add((this.prizePool * 30) / 100);
+            result.Add((this.prizePool * 20) / 100);
+
+            return result;
+        }
+
+        private Dictionary<int, Car> GetWinners() =>
             this.participants
             .OrderByDescending(n => this.GetPerformance(n.Key))
             .Take(3)
             .ToDictionary(n => n.Key, m => m.Value);
-
-        public abstract int GetPerformance(int id);
     }
 }

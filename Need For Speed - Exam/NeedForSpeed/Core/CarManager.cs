@@ -53,20 +53,28 @@
 
         public void Participate(int carId, int raceId)
         {
-            this.races[raceId].Participants.Add(carId, cars[carId]);
+            if (!garage.ParkedCars.Contains(carId))
+            {
+                this.races[raceId].Participants.Add(carId, cars[carId]);
+            }
         }
 
         public string Start(int id) => races[id].StartRace();
 
         public void Park(int id)
         {
+            foreach (var race in races.Values)
+            {
+                if (race.Participants.ContainsKey(id))
+                {
+                    return;
+                }
+            }
 
+            this.garage.AddCar(id);
         }
 
-        public void Unpark(int id)
-        {
-
-        }
+        public void Unpark(int id) => this.garage.RemoveCar(id);
 
         public void Tune(int tuneIndex, string addOn)
         {

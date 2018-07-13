@@ -44,8 +44,10 @@
                     Console.WriteLine(this.StartCommand(cmdArgs));
                     break;
                 case "park":
+                    this.ParkCommand(cmdArgs);
                     break;
                 case "unpark":
+                    this.UnparkCommand(cmdArgs);
                     break;
                 case "tune":
                     break;
@@ -93,6 +95,18 @@
         {
             int raceId = int.Parse(cmdArgs[1]);
             return manager.Start(raceId);
+        }
+
+        private void ParkCommand(string[] cmdArgs)
+        {
+            int id = int.Parse(cmdArgs[1]);
+            manager.Park(id);
+        }
+
+        private void UnparkCommand(string[] cmdArgs)
+        {
+            int id = int.Parse(cmdArgs[1]);
+            manager.Unpark(id);
         }
     }
 }
