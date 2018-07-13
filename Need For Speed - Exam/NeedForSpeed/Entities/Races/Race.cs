@@ -102,6 +102,11 @@
             var winners = GetWinners();
             var prizes = GetPrizes();
 
+            if (this.participants.Count == 0)
+            {
+                return "Cannot start the race with zero participants.";
+            }
+
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.route} - {this.length}");
 
