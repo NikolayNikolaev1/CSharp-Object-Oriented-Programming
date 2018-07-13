@@ -1,5 +1,6 @@
 ﻿namespace NeedForSpeed.Entities.Cars
 {
+    using System;
     using System.Text;
 
     public abstract class Car
@@ -15,13 +16,132 @@
         public Car(string brand, string model, int yearOfProduction, int horsepower, 
             int acceleration, int suspension, int durability)
         {
-            this.brand = brand;
-            this.model = model;
-            this.yearOfProduction = yearOfProduction;
-            this.horsepower = horsepower;
-            this.acceleration = acceleration;
-            this.suspension = suspension;
-            this.durability = durability;
+            this.Brand = brand;
+            this.Model = model;
+            this.YearOfProduction = yearOfProduction;
+            this.HorsePower = horsepower;
+            this.Acceleration = acceleration;
+            this.Suspension = suspension;
+            this.Durability = durability;
+        }
+
+        public string Brand
+        {
+            get
+            {
+                return this.brand;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException();
+                }
+
+                this.brand = value;
+            }
+        }
+
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException();
+                }
+
+                this.model = value;
+            }
+        }
+
+        public int YearOfProduction
+        {
+            get
+            {
+                return this.yearOfProduction;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                this.yearOfProduction = value;
+            }
+        }
+
+        public int HorsePower
+        {
+            get
+            {
+                return this.horsepower;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                this.horsepower = value;
+            }
+        }
+
+        public int Acceleration
+        {
+            get
+            {
+                return this.acceleration;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                this.acceleration = value;
+            }
+        }
+
+        public int Suspension
+        {
+            get
+            {
+                return this.suspension;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                this.suspension = value;
+            }
+        }
+
+        public int Durability
+        {
+            get
+            {
+                return this.durability;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                this.durability = value;
+            }
         }
 
         public override string ToString()
